@@ -28,5 +28,8 @@
     "words": [],
     "ignoreWords": [],
     "import": []
+  },
+  "dependencies": {
+    "@humanwhocodes/crosspost": "1.0.3"
   }
 }
