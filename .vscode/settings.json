@@ -10,5 +10,18 @@
     },
     "editor.formatOnSave": true,
     "biome.enabled": true,
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "biomejs.biome",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                ".markdownlint.jsonc",
+            ],
+            "schema": {
+                // @see https://github.com/microsoft/vscode/issues/102061#issuecomment-657080963
+                "allowTrailingCommas": true
+            }
+        }
+    ],
+    "files.trimTrailingWhitespace": true,
+    "evenBetterToml.formatter.arrayTrailingComma": false
 }
