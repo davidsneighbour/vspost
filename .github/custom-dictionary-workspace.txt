@@ -1,4 +1,6 @@
 # Custom Dictionary Words
 cooldown
+crosspost
 gomod
+humanwhocodes
 vspost

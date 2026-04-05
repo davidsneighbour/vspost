@@ -1,15 +1,14 @@
 {
-  "$schema": "https://github.com/DavidAnson/markdownlint/blob/main/schema/markdownlint-config-schema.json",
-  "$id": "https://raw.githubusercontent.com/davidsneighbour/kollitsch.dev/refs/heads/main/src/config/.markdownlint.jsonc",
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/refs/heads/main/schema/markdownlint-config-schema.json",
   "default": true,
-  "customRules": [
-    "@github/markdownlint-github",
-    "markdownlint-rule-relative-links",
-    "markdownlint-rule-search-replace",
-    "markdownlint-rule-extended-ascii",
-    "markdownlint-rule-title-case-style",
-    "markdownlint-rule-list-duplicates"
-  ],
+  "customRules": {
+    "@github/markdownlint-github": true,
+    "markdownlint-rule-relative-links": true,
+    "markdownlint-rule-search-replace": true,
+    "markdownlint-rule-extended-ascii": true,
+    "markdownlint-rule-title-case-style": true,
+    "markdownlint-rule-list-duplicates": true
+  },
   // Rules
   // unlisted rules are using default settings (usually "true")
   // @see https://github.com/DavidAnson/markdownlint/#rules--aliases
@@ -35,8 +34,7 @@
   "MD021": false,
   // disallow multiple headings with the same content within the same level structure
   "MD024": {
-    "siblings_only": true,
-    "allow_different_nesting": true
+    "siblings_only": true
   },
   // no inline HTML elements, except for the allowed ones. in tables only the explicit allowed ones
   "MD033": {
@@ -82,7 +80,7 @@
   "MD055": {
     "style": "leading_and_trailing"
   },
-  // generic linktexts are prohibited
+  // generic link texts are prohibited
   "MD059": {
     "prohibited_texts": [
       "click here",
@@ -145,6 +143,6 @@
     // string[] (default: [])
     "ignore": [
       "JavaScript"
-    ],
-  },
+    ]
+  }
 }

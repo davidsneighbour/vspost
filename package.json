@@ -19,6 +19,7 @@
   "main": "index.js",
   "type": "module",
   "cspell": {
+    "language": "en-GB",
     "version": "0.2",
     "ignorePaths": [
       ".github/**"
@@ -30,6 +31,12 @@
     "import": []
   },
   "dependencies": {
-    "@humanwhocodes/crosspost": "1.0.3"
+    "@github/markdownlint-github": "0.8.0",
+    "@humanwhocodes/crosspost": "1.0.3",
+    "markdownlint-rule-extended-ascii": "0.2.1",
+    "markdownlint-rule-list-duplicates": "0.0.1",
+    "markdownlint-rule-relative-links": "5.1.0",
+    "markdownlint-rule-search-replace": "1.2.0",
+    "markdownlint-rule-title-case-style": "0.4.3"
   }
 }
