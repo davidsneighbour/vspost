@@ -1,3 +1,14 @@
 {
-    "workbench.colorTheme": "Solarized Light"
+    "workbench.colorTheme": "Solarized Light",
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:vspost}/.github/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    },
+    "editor.formatOnSave": true,
+    "biome.enabled": true,
+    "editor.defaultFormatter": "biomejs.biome"
 }

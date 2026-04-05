@@ -17,5 +17,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
-  "type": "module"
+  "type": "module",
+  "cspell": {
+    "version": "0.2",
+    "ignorePaths": [
+      ".github/**"
+    ],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [],
+    "ignoreWords": [],
+    "import": []
+  }
 }
