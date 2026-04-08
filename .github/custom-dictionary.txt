@@ -1,4 +1,3 @@
-# Custom Dictionary Words
 cooldown
 crosspost
 gomod

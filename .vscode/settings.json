@@ -1,27 +1,30 @@
 {
-    "workbench.colorTheme": "Solarized Light",
-    "cSpell.customDictionaries": {
-        "custom-dictionary-workspace": {
-            "name": "custom-dictionary-workspace",
-            "path": "${workspaceFolder:vspost}/.github/custom-dictionary-workspace.txt",
-            "addWords": true,
-            "scope": "workspace"
-        }
-    },
-    "editor.formatOnSave": true,
-    "biome.enabled": true,
-    "editor.defaultFormatter": "biomejs.biome",
-    "json.schemas": [
-        {
-            "fileMatch": [
-                ".markdownlint.jsonc",
-            ],
-            "schema": {
-                // @see https://github.com/microsoft/vscode/issues/102061#issuecomment-657080963
-                "allowTrailingCommas": true
-            }
-        }
-    ],
-    "files.trimTrailingWhitespace": true,
-    "evenBetterToml.formatter.arrayTrailingComma": false
+  "workbench.colorTheme": "Solarized Light",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-vspost": {
+      "name": "custom-dictionary-vspost",
+      "path": "${workspaceFolder:vspost}/.github/custom-dictionary.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+  "editor.formatOnSave": true,
+  "biome.enabled": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        ".markdownlint.jsonc",
+      ],
+      "schema": {
+        // @see https://github.com/microsoft/vscode/issues/102061#issuecomment-657080963
+        "allowTrailingCommas": true
+      }
+    }
+  ],
+  "files.trimTrailingWhitespace": true,
+  "evenBetterToml.formatter.arrayTrailingComma": false,
+  "chat.tools.terminal.autoApprove": {
+    "npx @humanwhocodes/crosspost": true
+  }
 }

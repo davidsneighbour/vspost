@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "crosspost": {
+      "command": "npx",
+      "args": [
+        "@humanwhocodes/crosspost",
+        "-m",
+        "-l",
+        "--mcp"
+      ],
+      "env": {
+        "CROSSPOST_DOTENV": "/home/patrick/.env"
+      }
+    }
+  },
+  "inputs": []
+}
