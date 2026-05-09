@@ -37,18 +37,18 @@
   },
   "dependencies": {
     "@github/markdownlint-github": "0.8.0",
-    "@humanwhocodes/crosspost": "1.0.3",
+    "@humanwhocodes/crosspost": "1.0.4",
     "markdownlint-rule-extended-ascii": "0.2.1",
     "markdownlint-rule-list-duplicates": "0.0.1",
     "markdownlint-rule-relative-links": "5.1.0",
     "markdownlint-rule-search-replace": "1.2.0",
     "markdownlint-rule-title-case-style": "0.4.3",
-    "@atproto/api": "^0.16.6",
-    "better-sqlite3": "^11.9.1",
-    "zod": "^3.24.1",
+    "@atproto/api": "^0.19.16",
+    "better-sqlite3": "^12.9.0",
+    "zod": "^4.4.3",
     "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^22.10.7",
-    "typescript": "^5.7.3"
+    "@types/node": "^25.6.2",
+    "typescript": "^6.0.3"
   },
   "bin": {
     "dnb-social-report": "./dist/cli.js"
