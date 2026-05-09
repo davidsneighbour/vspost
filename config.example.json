@@ -1,0 +1,44 @@
+{
+  "databasePath": "./social-report.sqlite",
+  "outputDirectory": "./reports",
+  "sinceHours": 24,
+  "maxItemsPerNetwork": 100,
+  "topics": {
+    "positive": [
+      "web development",
+      "frontend",
+      "typescript",
+      "javascript",
+      "astro",
+      "tailwind",
+      "open source",
+      "ai tools",
+      "automation",
+      "linux",
+      "self hosting",
+      "technical seo"
+    ],
+    "negative": [
+      "election",
+      "party politics",
+      "culture war",
+      "conspiracy",
+      "crypto giveaway",
+      "outrage"
+    ]
+  },
+  "networks": {
+    "mastodon": {
+      "enabled": true,
+      "instance": "${MASTODON_HOST}",
+      "accessToken": "${MASTODON_ACCESS_TOKEN}",
+      "lists": []
+    },
+    "bluesky": {
+      "enabled": true,
+      "service": "${BLUESKY_HOST}",
+      "identifier": "${BLUESKY_IDENTIFIER}",
+      "appPassword": "${BLUESKY_PASSWORD}"
+    }
+  }
+}

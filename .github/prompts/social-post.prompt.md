@@ -1,5 +1,5 @@
 ---
-name: Social Media Post Generator
+name: social-post.prompt
 description: This prompt generates concise social media posts based on the actual content of a given URL, ensuring that the output is grounded in verifiable information rather than assumptions or marketing language.
 ---
 

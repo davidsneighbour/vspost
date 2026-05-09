@@ -1,1 +1,7 @@
-node_modules
+node_modules/
+dist/
+.env
+reports/
+social-report.sqlite
+*.log
+config.json
