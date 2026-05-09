@@ -5,7 +5,7 @@ import { createCollectors } from './adapters/index.js';
 import { loadConfig } from './config/load.js';
 import { SocialReportDatabase } from './db/database.js';
 import { writeMarkdownReport } from './report/markdown.js';
-import { scorePosts } from './scoring/score.js';
+import { deduplicatePosts, scorePosts } from './scoring/score.js';
 import type { NetworkName, SocialNotification, SocialPost } from './types/domain.js';
 import { formatError } from './utils/errors.js';
 
@@ -55,11 +55,14 @@ async function main(): Promise<void> {
     database.close();
   }
 
-  const scoredPosts = scorePosts(allPosts, config);
+  const enabledNetworks = collectors.map(([network]) => network);
+  const uniquePosts = deduplicatePosts(allPosts);
+  const scoredPosts = scorePosts(uniquePosts, config);
   const outputPath = await writeMarkdownReport({
     outputDirectory: config.outputDirectory,
     since,
     generatedAt: new Date(),
+    networks: enabledNetworks,
     posts: scoredPosts,
     notifications: allNotifications
   });

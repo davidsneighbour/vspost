@@ -24,6 +24,8 @@ export interface SocialPost {
 export interface ScoredPost extends SocialPost {
   readonly score: number;
   readonly scoreReasons: readonly string[];
+  readonly hasPositiveTopicMatch: boolean;
+  readonly hasNegativeTopicMatch: boolean;
 }
 
 export interface SocialNotification {

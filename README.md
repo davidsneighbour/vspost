@@ -66,7 +66,7 @@ dnb-social-report run --config config.json --all --since-hours 24
 
 ## Output
 
-The default output is a Markdown file under `./reports/` and a SQLite database at `./social-report.sqlite`.
+The default output is a timestamped report directory under `./reports/` and a SQLite database at `./social-report.sqlite`. Each report directory contains an `index.md` overview plus one Markdown file per enabled network, such as `mastodon.md` and `bluesky.md`.
 
 ## Safety rule
 

@@ -2,6 +2,30 @@ import type { AppConfig } from '../config/schema.js';
 import type { ScoredPost, SocialPost } from '../types/domain.js';
 
 /**
+ * Removes duplicate posts by network and id.
+ *
+ * @param posts - Posts collected from all adapters.
+ * @returns Unique posts.
+ */
+export function deduplicatePosts(posts: readonly SocialPost[]): SocialPost[] {
+  const seen = new Set<string>();
+  const unique: SocialPost[] = [];
+
+  for (const post of posts) {
+    const key = `${post.network}:${post.id}`;
+
+    if (seen.has(key)) {
+      continue;
+    }
+
+    seen.add(key);
+    unique.push(post);
+  }
+
+  return unique;
+}
+
+/**
  * Scores posts for relevance to David's Neighbour's social graph report.
  *
  * @param posts - Normalised posts from collectors.
@@ -21,13 +45,15 @@ function scorePost(post: SocialPost, config: AppConfig): ScoredPost {
 
   const positiveMatches = config.topics.positive.filter((topic) => haystack.includes(topic.toLowerCase()));
   const negativeMatches = config.topics.negative.filter((topic) => haystack.includes(topic.toLowerCase()));
+  const hasPositiveTopicMatch = positiveMatches.length > 0;
+  const hasNegativeTopicMatch = negativeMatches.length > 0;
 
-  if (positiveMatches.length > 0) {
+  if (hasPositiveTopicMatch) {
     score += positiveMatches.length * 3;
     reasons.push(`topic match: ${positiveMatches.join(', ')}`);
   }
 
-  if (negativeMatches.length > 0) {
+  if (hasNegativeTopicMatch) {
     score -= negativeMatches.length * 5;
     reasons.push(`negative topic: ${negativeMatches.join(', ')}`);
   }
@@ -60,10 +86,21 @@ function scorePost(post: SocialPost, config: AppConfig): ScoredPost {
     reasons.push('very short post');
   }
 
+  if (!hasPositiveTopicMatch && hasNegativeTopicMatch) {
+    score = Math.min(score, 0);
+    reasons.push('capped: negative/noise topic without positive topic match');
+  }
+
+  if (!hasPositiveTopicMatch) {
+    reasons.push('not eligible for technical relevance: no positive topic match');
+  }
+
   return {
     ...post,
     score,
-    scoreReasons: reasons
+    scoreReasons: reasons,
+    hasPositiveTopicMatch,
+    hasNegativeTopicMatch
   };
 }
 
